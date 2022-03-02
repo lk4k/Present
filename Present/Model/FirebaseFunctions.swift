@@ -53,7 +53,7 @@ struct FirebaseFunctions{
     }
     
     static func addUserName(_ name: String){
-        //get the user's id. The image will be stored by this uid.
+        //get the user's id. The name will be stored by this uid.
         guard let uid = Auth.auth().currentUser?.uid else{
             return
         }
@@ -62,6 +62,19 @@ struct FirebaseFunctions{
             .collection("users")
             .document(uid)
             .setData(["name" : name], merge: true)//true means if the document already exists it appends image url to data that already exists
+        
+    }
+    
+    static func addUserBirthday(_ birthday: Date){
+        //get the user's id. The name will be stored by this uid.
+        guard let uid = Auth.auth().currentUser?.uid else{
+            return
+        }
+        
+        Firestore.firestore()
+            .collection("users")
+            .document(uid)
+            .setData(["birthday" : birthday], merge: true)//true means if the document already exists it appends image url to data that already exists
         
     }
     

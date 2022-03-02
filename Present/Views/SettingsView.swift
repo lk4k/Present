@@ -26,6 +26,7 @@ struct SettingsView: View {
                     .clipShape(Circle())
                 
                 Spacer()
+                //add name
                 HStack {
                     Image(systemName: "person")
                     TextField("name", text: $userInfo.name)
@@ -33,8 +34,15 @@ struct SettingsView: View {
                 }.foregroundColor(Color.buttonText)
                 .padding()
                 .padding(.top)
+                Spacer()
+                //add birthday
+                HStack {
+                    Image(systemName: "present")
+                    DatePicker("Enter your birthday", selection: $userInfo.birthday)
+                }.foregroundColor(Color.buttonText)
+                .padding()
+                .padding(.top)
                 
-
                 
                 
                 Spacer()
