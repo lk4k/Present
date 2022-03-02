@@ -39,6 +39,9 @@ struct SettingsView: View {
                 HStack {
                     Image(systemName: "present")
                     DatePicker("Enter your birthday", selection: $userInfo.birthday)
+                        .datePickerStyle(GraphicalDatePickerStyle())
+                        .frame(maxHeight: 400)
+                        .background(Color.init(red: 194/255, green: 219/255, blue: 223/255))
                 }.foregroundColor(Color.buttonText)
                 .padding()
                 .padding(.top)
