@@ -26,38 +26,46 @@ struct SettingsView: View {
                     .clipShape(Circle())
                 
                 Spacer()
-                //add name
-                HStack {
+                VStack {
+                    //change image
+                    Button("Change Picture") {
+                        self.showSheet.toggle()
+                    }
+                    .frame(width: UIScreen.main.bounds.width - 100)
+                    .padding()
+                    .background(Color.buttonBackground)
+                    .foregroundColor(Color.buttonText)
+                    .cornerRadius(30.0)
+                    
+                    Spacer()
+
+                    
+                    //name
+                    HStack{
                     Image(systemName: "person")
                     TextField("name", text: $userInfo.name)
                         .disableAutocorrection(true)
-                }.foregroundColor(Color.buttonText)
-                .padding()
-                .padding(.top)
-                Spacer()
-                //add birthday
-                HStack {
-                    Image(systemName: "present")
+                    }
+                    
+                    Spacer()
+                    
+                    //birthday
                     DatePicker("Enter your birthday", selection: $userInfo.birthday)
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                        .frame(maxHeight: 400)
-                        .background(Color.init(red: 194/255, green: 219/255, blue: 223/255))
+                        .datePickerStyle(CompactDatePickerStyle())
+                        .frame(maxHeight: 200)
+                    
+                    Spacer()
+                    
+                    //add wishlish
+                    TextField("Wishlist", text: $userInfo.wishlist)
+                        .disableAutocorrection(false)
+                    
                 }.foregroundColor(Color.buttonText)
                 .padding()
                 .padding(.top)
                 
-                
-                
-                Spacer()
-                
-                Button("Change Picture") {
-                    self.showSheet.toggle()
-                }
-                .frame(width: UIScreen.main.bounds.width - 100)
-                .padding()
-                .background(Color.buttonBackground)
-                .foregroundColor(Color.buttonText)
-                .cornerRadius(30.0)
+        
+    
                 
                 Button("Sign Out") {
                     FirebaseFunctions.signOut(userInfo)

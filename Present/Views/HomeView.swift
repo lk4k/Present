@@ -14,7 +14,7 @@ struct HomeView: View {
         TabView{
             AccountDetail()
                 .tabItem {
-                    Label("Pictures", systemImage: "person")}
+                    Label("My Info", systemImage: "person")}
             SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gear")

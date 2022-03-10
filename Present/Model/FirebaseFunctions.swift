@@ -78,6 +78,7 @@ struct FirebaseFunctions{
         
     }
     
+    
     static func uploadPicture(_ image: UIImage,completion: @escaping (Bool) -> ()){
         //get the user's id. The image will be stored by this uid.
         guard let uid = Auth.auth().currentUser?.uid else{
