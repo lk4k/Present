@@ -16,6 +16,7 @@ class UserInfo : ObservableObject{
     @Published var image: UIImage = UIImage(named: "user")!
     @Published var loggedIn : Bool
     
+    
     init(name : String = "", email : String = "", password : String = "", loggedIn : Bool = false, birthday: Date = Date(), wishlist : String = ""){
         self.name = name
         self.email = email
@@ -27,3 +28,4 @@ class UserInfo : ObservableObject{
         FirebaseFunctions.getUserInfo(self)
     }
 }
+

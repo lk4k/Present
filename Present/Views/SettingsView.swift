@@ -1,6 +1,6 @@
 //
 //  SettingsView.swift
-//  SlowmoGraham2
+//  Present
 //
 //  Created by Lauren Kelz (student LM) on 2/14/22.
 //

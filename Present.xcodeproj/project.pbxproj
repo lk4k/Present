@@ -22,6 +22,7 @@
 		623AEBEA27CE96C000247391 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEBE927CE96C000247391 /* HomeView.swift */; };
 		623AEBEC27CE9C2900247391 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEBEB27CE9C2900247391 /* SettingsView.swift */; };
 		623AEBEE27CE9CA700247391 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEBED27CE9CA700247391 /* ImagePicker.swift */; };
+		623AEBF027DA68E900247391 /* DataParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEBEF27DA68E900247391 /* DataParsing.swift */; };
 		9E7CFE703B4A3F0F45F9E909 /* Pods_Present.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254C8E89ADA5834437FF8E6A /* Pods_Present.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		623AEBE927CE96C000247391 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		623AEBEB27CE9C2900247391 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		623AEBED27CE9CA700247391 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		623AEBEF27DA68E900247391 /* DataParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataParsing.swift; sourceTree = "<group>"; };
 		8D00727F23FB59E3C85CDE8C /* Pods-Present.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Present.release.xcconfig"; path = "Target Support Files/Pods-Present/Pods-Present.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				623AEBE327CD1B1100247391 /* UserInfo.swift */,
+				623AEBEF27DA68E900247391 /* DataParsing.swift */,
 				623AEBB227C8144100247391 /* ContentView.swift */,
 				623AEBE727CE96A300247391 /* AccountDetail.swift */,
 				623AEBE527CD1B4400247391 /* LogInView.swift */,
@@ -379,6 +382,7 @@
 				623AEBE027CD1AE500247391 /* FirebaseFunctions.swift in Sources */,
 				623AEBEA27CE96C000247391 /* HomeView.swift in Sources */,
 				623AEBEE27CE9CA700247391 /* ImagePicker.swift in Sources */,
+				623AEBF027DA68E900247391 /* DataParsing.swift in Sources */,
 				623AEBE427CD1B1100247391 /* UserInfo.swift in Sources */,
 				623AEBE227CD1AFE00247391 /* Constants.swift in Sources */,
 			);
