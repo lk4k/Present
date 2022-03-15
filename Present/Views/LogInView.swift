@@ -10,27 +10,44 @@ import SwiftUI
 struct LogInView: View {
     
     //@EnvironmentObject var userInfo : UserInfo
-    @EnvironmentObject var userInfo : UserInfo
+    @StateObject var userInfo = UserInfo()
     
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(Color.background)
+                .foregroundColor(Color.offWhite)
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 Spacer()
                 HStack {
-                    Image(systemName: "mail")
+                    Spacer()
+                    Spacer()
+                    Image(systemName: "mail").resizable()
+                        .frame(width: 40, height: 25)
                     TextField("email", text: $userInfo.email)
                         .autocapitalization(.none)
                         .keyboardType(.emailAddress)
-                }.padding()
-                .padding(.top)
+
+                }
+                .frame(width: 350, height: 60)
+                .background(Color.Blue)
+                .foregroundColor(Color.black)
+                .cornerRadius(30.0)
+                .padding()
                 
                 HStack {
+                    Spacer()
+                    Spacer(minLength: 15)
                     Image(systemName: "lock")
+                        .resizable()
+                        .frame(width: 25, height: 25)
                     SecureField("password", text: $userInfo.password)
-                }.padding()
+                }
+                .frame(width: 350, height: 60)
+                .background(Color.Blue)
+                .foregroundColor(Color.black)
+                .cornerRadius(30.0)
+                .padding()
                 
                 Button("Forgot Password") {
                     FirebaseFunctions.forgotPassword(email: userInfo.email){ success in
@@ -46,11 +63,11 @@ struct LogInView: View {
                         }
                     }
                 }
-                .frame(width: UIScreen.main.bounds.width - 100)
-                .padding()
-                .background(Color.buttonBackground)
-                .foregroundColor(Color.buttonText)
+                .frame(width: 350, height: 60)
+                .background(Color.Blue)
+                .foregroundColor(Color.black)
                 .cornerRadius(30.0)
+                .padding()
                 
                 Button("Sign In") {
                     FirebaseFunctions.login(email: userInfo.email, password: userInfo.password){ success in
@@ -59,12 +76,13 @@ struct LogInView: View {
                         }
                     }
                 }
-                .frame(width: UIScreen.main.bounds.width - 100)
-                .padding()
-                .background(Color.buttonBackground)
-                .foregroundColor(Color.buttonText)
+                .frame(width: 350, height: 60)
+                .background(Color.Blue)
+                .foregroundColor(Color.black)
                 .cornerRadius(30.0)
-                Spacer()
+                .padding()
+                
+                
             }
         }
     }
