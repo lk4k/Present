@@ -12,10 +12,10 @@ extension Color {
     static let buttonBackground = Color("Buttonbackground")
     static let buttonText = Color("ButtonText")
     static let Blue = Color("Blue")
-    static let green = Color("green")
+    static let Green = Color("Green")
     static let offWhite = Color("offWhite")
-    static let pink = Color("pink")
-    static let purple = Color("purple")
+    static let Pink = Color("Pink")
+    static let Purple = Color("Purple")
 }
 
 

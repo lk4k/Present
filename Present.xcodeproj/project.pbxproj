@@ -24,6 +24,9 @@
 		623AEBEE27CE9CA700247391 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEBED27CE9CA700247391 /* ImagePicker.swift */; };
 		623AEBF027DA68E900247391 /* DataParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEBEF27DA68E900247391 /* DataParsing.swift */; };
 		9E7CFE703B4A3F0F45F9E909 /* Pods_Present.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254C8E89ADA5834437FF8E6A /* Pods_Present.framework */; };
+		E26BDBC827E505C100814130 /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E26BDBC727E505C100814130 /* Nunito-VariableFont_wght.ttf */; };
+		E26BDBC927E505C100814130 /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E26BDBC727E505C100814130 /* Nunito-VariableFont_wght.ttf */; };
+		E26BDBCA27E505C100814130 /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E26BDBC727E505C100814130 /* Nunito-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,7 @@
 		623AEBED27CE9CA700247391 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		623AEBEF27DA68E900247391 /* DataParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataParsing.swift; sourceTree = "<group>"; };
 		8D00727F23FB59E3C85CDE8C /* Pods-Present.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Present.release.xcconfig"; path = "Target Support Files/Pods-Present/Pods-Present.release.xcconfig"; sourceTree = "<group>"; };
+		E26BDBC727E505C100814130 /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-VariableFont_wght.ttf"; path = "../../../Downloads/Nunito/Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 		623AEBAF27C8144100247391 /* Present */ = {
 			isa = PBXGroup;
 			children = (
+				E26BDBC727E505C100814130 /* Nunito-VariableFont_wght.ttf */,
 				623AEBDC27C8159000247391 /* Model */,
 				623AEBDB27C8158100247391 /* Views */,
 				623AEBB027C8144100247391 /* PresentApp.swift */,
@@ -305,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26BDBC827E505C100814130 /* Nunito-VariableFont_wght.ttf in Resources */,
 				623AEBB827C8144300247391 /* Preview Assets.xcassets in Resources */,
 				623AEBDE27C8164B00247391 /* GoogleService-Info.plist in Resources */,
 				623AEBB527C8144300247391 /* Assets.xcassets in Resources */,
@@ -315,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26BDBC927E505C100814130 /* Nunito-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26BDBCA27E505C100814130 /* Nunito-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,8 +17,20 @@ struct LogInView: View {
             Rectangle()
                 .foregroundColor(Color.offWhite)
                 .edgesIgnoringSafeArea(.all)
+            
             VStack{
-                Spacer()
+                
+                    Text("Login")
+                        .font(Font.custom("Nunito", size: 42))
+                        .frame(width: 180, height: 180)
+                        .background(Color.Pink)
+                        .foregroundColor(Color.black)
+                        .cornerRadius(200.0)
+                        .padding()
+               
+                
+                
+                
                 HStack {
                     Spacer()
                     Spacer()
@@ -27,13 +39,16 @@ struct LogInView: View {
                     TextField("email", text: $userInfo.email)
                         .autocapitalization(.none)
                         .keyboardType(.emailAddress)
-
+                        .font(Font.custom("Nunito", size: 30))
+                    
+                    
                 }
-                .frame(width: 350, height: 60)
-                .background(Color.Blue)
+                .frame(width: 350, height: 80)
+                .background(Color.Pink)
                 .foregroundColor(Color.black)
-                .cornerRadius(30.0)
+                .cornerRadius(80.0)
                 .padding()
+                
                 
                 HStack {
                     Spacer()
@@ -41,18 +56,22 @@ struct LogInView: View {
                     Image(systemName: "lock")
                         .resizable()
                         .frame(width: 25, height: 25)
+                    
                     SecureField("password", text: $userInfo.password)
+                        .font(Font.custom("Nunito", size: 30))
+                    
                 }
-                .frame(width: 350, height: 60)
-                .background(Color.Blue)
+                .frame(width: 350, height: 80)
+                .background(Color.Pink)
                 .foregroundColor(Color.black)
-                .cornerRadius(30.0)
-                .padding()
+                .cornerRadius(80.0)
+                //.padding()
                 
                 Button("Forgot Password") {
                     FirebaseFunctions.forgotPassword(email: userInfo.email){ success in
-                    }}.foregroundColor(Color.background)
-                .padding()
+                    }}.frame(width: 350/2, height: 60)
+                    .foregroundColor(Color.blue)
+                
                 
                 Spacer()
                 
@@ -63,11 +82,11 @@ struct LogInView: View {
                         }
                     }
                 }
-                .frame(width: 350, height: 60)
-                .background(Color.Blue)
+                .frame(width: 350, height: 80)
+                .background(Color.Pink)
                 .foregroundColor(Color.black)
-                .cornerRadius(30.0)
-                .padding()
+                .cornerRadius(80.0)
+                //.padding()
                 
                 Button("Sign In") {
                     FirebaseFunctions.login(email: userInfo.email, password: userInfo.password){ success in
@@ -76,12 +95,13 @@ struct LogInView: View {
                         }
                     }
                 }
-                .frame(width: 350, height: 60)
-                .background(Color.Blue)
+                .frame(width: 350, height: 80)
+                .background(Color.Pink)
                 .foregroundColor(Color.black)
-                .cornerRadius(30.0)
+                .cornerRadius(80.0)
                 .padding()
                 
+                Spacer()
                 
             }
         }
