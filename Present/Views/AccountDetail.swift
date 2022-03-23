@@ -12,11 +12,6 @@ import struct Kingfisher.KFImage
 struct AccountDetail: View {
     @EnvironmentObject var userInfo : UserInfo
     
-    var name : String = ""
-    @Published var birthday : Date = Date()
-    @Published var wishlist : String = ""
-    @Published var image: UIImage = UIImage(named: "user")!
-    
     var body: some View {
         
         let fetchData : FetchData = FetchData(userInfo: userInfo)
