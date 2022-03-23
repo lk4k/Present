@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var userInfo : UserInfo
-    //@StateObject var userInfo : UserInfo = UserInfo()
+   // @StateObject var userInfo : UserInfo = UserInfo()
     @State private var showSheet = false
     
     
