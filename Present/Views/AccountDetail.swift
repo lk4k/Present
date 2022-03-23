@@ -4,15 +4,18 @@
 //
 //  Created by Lauren Kelz (student LM) on 1/13/22.
 //
+// Account Detail is the infromation shown on a persons account by themselves, people who view their account, and their followers. Non-followers see a persons username. For followers it is basic level infromation such as name, birthday, and username.
 
 import SwiftUI
 import struct Kingfisher.KFImage
 
-
 struct AccountDetail: View {
-    
     @EnvironmentObject var userInfo : UserInfo
-   
+    
+    var name : String = ""
+    @Published var birthday : Date = Date()
+    @Published var wishlist : String = ""
+    @Published var image: UIImage = UIImage(named: "user")!
     
     var body: some View {
         
