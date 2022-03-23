@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    //@EnvironmentObject var userInfo : UserInfo
-    @StateObject var userInfo : UserInfo
+    @EnvironmentObject var userInfo : UserInfo
+    //@StateObject var userInfo : UserInfo
     
     var body: some View {
         Group{
