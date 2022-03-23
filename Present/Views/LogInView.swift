@@ -65,17 +65,16 @@ struct LogInView: View {
                 .background(Color.Pink)
                 .foregroundColor(Color.black)
                 .cornerRadius(80.0)
-                //.padding()
                 
                 Button("Forgot Password") {
                     FirebaseFunctions.forgotPassword(email: userInfo.email){ success in
-                    }}.frame(width: 350/2, height: 60)
+                    }}
                     .foregroundColor(Color.blue)
-                
+                    .font(Font.custom("Nunito", size: 20))
                 
                 Spacer()
                 
-                Button("Create Account with Email") {
+                Button("Create Account") {
                     FirebaseFunctions.authenticate(email: userInfo.email, password: userInfo.password){ success in
                         if success{
                             userInfo.loggedIn = true
@@ -86,7 +85,8 @@ struct LogInView: View {
                 .background(Color.Pink)
                 .foregroundColor(Color.black)
                 .cornerRadius(80.0)
-                //.padding()
+                .font(Font.custom("Nunito", size: 30))
+                
                 
                 Button("Sign In") {
                     FirebaseFunctions.login(email: userInfo.email, password: userInfo.password){ success in
@@ -99,6 +99,7 @@ struct LogInView: View {
                 .background(Color.Pink)
                 .foregroundColor(Color.black)
                 .cornerRadius(80.0)
+                .font(Font.custom("Nunito", size: 30))
                 .padding()
                 
                 Spacer()
