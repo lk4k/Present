@@ -24,9 +24,9 @@
 		623AEBEE27CE9CA700247391 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEBED27CE9CA700247391 /* ImagePicker.swift */; };
 		623AEBF027DA68E900247391 /* DataParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEBEF27DA68E900247391 /* DataParsing.swift */; };
 		623AEBF627EB7FF000247391 /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 623AEBF527EB7FF000247391 /* Nunito-VariableFont_wght.ttf */; };
+		623AEBFA27EE3D9600247391 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 623AEBF927EE3D9600247391 /* Nunito-Light.ttf */; };
 		9E7CFE703B4A3F0F45F9E909 /* Pods_Present.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254C8E89ADA5834437FF8E6A /* Pods_Present.framework */; };
 		E28C77CC27ECDEF200757463 /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28C77CB27ECDEF200757463 /* Nunito-ExtraLight.ttf */; };
-		E28C77CE27ECDF0900757463 /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28C77CD27ECDF0900757463 /* Nunito-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,9 +72,9 @@
 		623AEBED27CE9CA700247391 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		623AEBEF27DA68E900247391 /* DataParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataParsing.swift; sourceTree = "<group>"; };
 		623AEBF527EB7FF000247391 /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		623AEBF927EE3D9600247391 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-Light.ttf"; path = "../../../../../Downloads/Nunito/static/Nunito-Light.ttf"; sourceTree = "<group>"; };
 		8D00727F23FB59E3C85CDE8C /* Pods-Present.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Present.release.xcconfig"; path = "Target Support Files/Pods-Present/Pods-Present.release.xcconfig"; sourceTree = "<group>"; };
 		E28C77CB27ECDEF200757463 /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-ExtraLight.ttf"; path = "Present/Nunito/static/Nunito-ExtraLight.ttf"; sourceTree = SOURCE_ROOT; };
-		E28C77CD27ECDF0900757463 /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-Light.ttf"; path = "../../../../Downloads/Nunito/static/Nunito-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				623AEBF527EB7FF000247391 /* Nunito-VariableFont_wght.ttf */,
-				E28C77CD27ECDF0900757463 /* Nunito-Light.ttf */,
+				623AEBF927EE3D9600247391 /* Nunito-Light.ttf */,
 				E28C77CB27ECDEF200757463 /* Nunito-ExtraLight.ttf */,
 			);
 			path = Fonts;
@@ -324,7 +324,7 @@
 			files = (
 				623AEBF627EB7FF000247391 /* Nunito-VariableFont_wght.ttf in Resources */,
 				623AEBB827C8144300247391 /* Preview Assets.xcassets in Resources */,
-				E28C77CE27ECDF0900757463 /* Nunito-Light.ttf in Resources */,
+				623AEBFA27EE3D9600247391 /* Nunito-Light.ttf in Resources */,
 				623AEBDE27C8164B00247391 /* GoogleService-Info.plist in Resources */,
 				623AEBB527C8144300247391 /* Assets.xcassets in Resources */,
 				E28C77CC27ECDEF200757463 /* Nunito-ExtraLight.ttf in Resources */,
