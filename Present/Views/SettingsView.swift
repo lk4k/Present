@@ -19,8 +19,12 @@ struct SettingsView: View {
                 .foregroundColor(Color.background)
                 .edgesIgnoringSafeArea(.all)
             VStack{
-                Image(uiImage: userInfo.image)
+                
+                Spacer()
+                
+                Image(systemName: "person.crop.circle")
                     .resizable()
+                    .foregroundColor(Color.Pink)
                     .frame(width: 200, height: 200)
                     .aspectRatio(contentMode: .fill)
                     .clipShape(Circle())
@@ -28,53 +32,63 @@ struct SettingsView: View {
                 Spacer()
                 VStack {
                     //change image
-                    Button("Change Picture") {
+                    Button("change picture") {
                         self.showSheet.toggle()
                     }
-                    .frame(width: UIScreen.main.bounds.width - 100)
-                    .padding()
-                    .background(Color.buttonBackground)
-                    .foregroundColor(Color.buttonText)
-                    .cornerRadius(30.0)
-                    
-                    Spacer()
-
+                    .frame(width: 250, height: 70)
+                    .background(Color.Pink)
+                    .foregroundColor(Color.black)
+                    .cornerRadius(80.0)
+                    .font(Font.custom("Nunito-ExtraLight", size: 30))
+                                        
                     
                     //name
                     HStack{
-                    Image(systemName: "person")
-                    TextField("name", text: $userInfo.name)
-                        .disableAutocorrection(true)
+                        Image(systemName: "person")
+                        TextField("name", text: $userInfo.name)
+                            .disableAutocorrection(true)
+                            .padding()
                     }
-                    
-                    Spacer()
-                    
+                    .foregroundColor(Color.black)
+                    .font(Font.custom("Nunito-ExtraLight", size: 30))
+                    .padding()
+                                        
                     //birthday
-                    DatePicker("Enter your birthday", selection: $userInfo.birthday)
-                        .datePickerStyle(CompactDatePickerStyle())
-                        .frame(maxHeight: 200)
                     
-                    Spacer()
+                    
+                    DatePicker("birthday", selection: $userInfo.birthday)
+                        .datePickerStyle(CompactDatePickerStyle())
+                        .foregroundColor(Color.black)
+                        .font(Font.custom("Nunito-ExtraLight", size: 30))
+                        .padding()
                     
                     //add wishlish
                     TextField("Wishlist", text: $userInfo.wishlist)
                         .disableAutocorrection(false)
+                        .font(Font.custom("Nunito-ExtraLight", size: 22))
+                        .padding()
+                        
+                        
                     
-                }.foregroundColor(Color.buttonText)
+                }.foregroundColor(Color.black)
                 .padding()
-                .padding(.top)
+
+                Spacer()
+                Spacer()
+                Spacer()
                 
-        
-    
+                
                 
                 Button("Sign Out") {
                     FirebaseFunctions.signOut(userInfo)
                 }
-                .frame(width: UIScreen.main.bounds.width - 100)
-                .padding()
-                .background(Color.buttonBackground)
-                .foregroundColor(Color.buttonText)
-                .cornerRadius(30.0)
+                .frame(width: 200, height: 70)
+                .background(Color.Pink)
+                .foregroundColor(Color.black)
+                .cornerRadius(80.0)
+                .font(Font.custom("Nunito-ExtraLight", size: 30))
+                
+                Spacer()
                 Spacer()
             }
         }
