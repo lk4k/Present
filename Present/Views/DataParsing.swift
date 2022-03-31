@@ -37,7 +37,7 @@ class FetchData : ObservableObject{
                 return
             }
             
-            guard var dataAsString = String(data: data, encoding: .utf8) else {return}
+            guard let dataAsString = String(data: data, encoding: .utf8) else {return}
             print(dataAsString)
             
             print("data constructed")

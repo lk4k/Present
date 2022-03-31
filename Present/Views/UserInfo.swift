@@ -25,7 +25,7 @@ class UserInfo : ObservableObject{
         self.birthday = birthday
         self.wishlist = wishlist
         
-        FirebaseFunctions.getUserInfo(self)
+        //FirebaseFunctions.getUserInfo(self)
     }
 }
 
