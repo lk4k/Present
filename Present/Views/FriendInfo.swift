@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class friendInfo : ObservableObject{
+class FriendInfo : ObservableObject{
     var name : String
     @Published var birthday : Date
     @Published var wishlist : String

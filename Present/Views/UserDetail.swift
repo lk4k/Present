@@ -13,7 +13,7 @@ struct UserDetail: View {
     
     var body: some View {
         
-        let fetchData : FetchData = FetchData(userInfo: userInfo)
+         //let fetchData : FetchData = FetchData(userInfo: userInfo)
         
         //list of responses from parsed JSON information given the user's birthday
         VStack{
@@ -70,7 +70,7 @@ struct UserDetail: View {
     
 }
 
-struct AccountDetail_Previews: PreviewProvider {
+struct UserDetail_Previews: PreviewProvider {
     static var previews: some View {
        UserDetail()
         
