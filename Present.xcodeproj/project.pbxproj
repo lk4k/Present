@@ -25,7 +25,7 @@
 		623AEBF027DA68E900247391 /* DataParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEBEF27DA68E900247391 /* DataParsing.swift */; };
 		623AEBF627EB7FF000247391 /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 623AEBF527EB7FF000247391 /* Nunito-VariableFont_wght.ttf */; };
 		9E7CFE703B4A3F0F45F9E909 /* Pods_Present.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254C8E89ADA5834437FF8E6A /* Pods_Present.framework */; };
-		AE27E50D27FB4C690084A50D /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27E50C27FB4C690084A50D /* FriendView.swift */; };
+		AE27E50D27FB4C690084A50D /* FriendInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27E50C27FB4C690084A50D /* FriendInfo.swift */; };
 		E28C77CC27ECDEF200757463 /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28C77CB27ECDEF200757463 /* Nunito-ExtraLight.ttf */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +73,7 @@
 		623AEBEF27DA68E900247391 /* DataParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataParsing.swift; sourceTree = "<group>"; };
 		623AEBF527EB7FF000247391 /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		8D00727F23FB59E3C85CDE8C /* Pods-Present.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Present.release.xcconfig"; path = "Target Support Files/Pods-Present/Pods-Present.release.xcconfig"; sourceTree = "<group>"; };
-		AE27E50C27FB4C690084A50D /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
+		AE27E50C27FB4C690084A50D /* FriendInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfo.swift; sourceTree = "<group>"; };
 		E28C77CB27ECDEF200757463 /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-ExtraLight.ttf"; path = "Present/Nunito/static/Nunito-ExtraLight.ttf"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -177,7 +177,7 @@
 				623AEBE927CE96C000247391 /* HomeView.swift */,
 				623AEBEB27CE9C2900247391 /* SettingsView.swift */,
 				623AEBED27CE9CA700247391 /* ImagePicker.swift */,
-				AE27E50C27FB4C690084A50D /* FriendView.swift */,
+				AE27E50C27FB4C690084A50D /* FriendInfo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -403,7 +403,7 @@
 				623AEBEE27CE9CA700247391 /* ImagePicker.swift in Sources */,
 				623AEBF027DA68E900247391 /* DataParsing.swift in Sources */,
 				623AEBE427CD1B1100247391 /* UserInfo.swift in Sources */,
-				AE27E50D27FB4C690084A50D /* FriendView.swift in Sources */,
+				AE27E50D27FB4C690084A50D /* FriendInfo.swift in Sources */,
 				623AEBE227CD1AFE00247391 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
