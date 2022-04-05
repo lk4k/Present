@@ -8,48 +8,51 @@
 import SwiftUI
 
 struct FriendDetail: View {
-    @EnvironmentObject var friendInfo : FriendInfo
+    //@EnvironmentObject var friendInfo : FriendInfo
+    
+    var friendInfo: FriendInfo = FriendInfo(name: "Jamie", birthday: Date(), wishlist: "bread")
     
     var body: some View {
-    
+        
+        //need to pull friends infomations
+        
         VStack{
-            //need to pull friends infomations
             
+            
+            Image(systemName: "person.crop.circle")
+                .resizable()
+                .foregroundColor(Color.green)
+                .frame(width: 200, height: 200)
+                .aspectRatio(contentMode: .fill)
+                .clipShape(Circle())
             
             //displaying variables
             HStack{
-            Text(friendInfo.name).font(Font.custom("Nunito-ExtraLight", size: 30))
-                Button("friend") {
-                    
-                }.frame(width: 150, height: 70)
-                .background(Color.Pink)
-                .foregroundColor(Color.black)
-                .cornerRadius(80.0)
-                .font(Font.custom("Nunito-ExtraLight", size: 23))
-                Button("favorite"){
-                    
-                }.frame(width: 150, height: 70)
-                .background(Color.Pink)
-                .foregroundColor(Color.black)
-                .cornerRadius(80.0)
-                .font(Font.custom("Nunito-ExtraLight", size: 20))
+                
+                Text(friendInfo.name)
+                    .font(Font.custom("Nunito-ExtraLight", size: 30))
+                
+                //add buttons for liking and following
+                
             }
+            
+            
             HStack{
                 Text("wishlist:").font(Font.custom("Nunito-ExtraLight", size: 30))
-            Text(friendInfo.wishlist).font(Font.custom("Nunito-ExtraLight", size: 23))
+                Text(friendInfo.wishlist).font(Font.custom("Nunito-ExtraLight", size: 23))
             }
         }
-       
-     
-      
+        
+        
+        
     }
-
+    
     
 }
 
 struct FriendDetail_Previews: PreviewProvider {
     static var previews: some View {
-       FriendDetail()
+        FriendDetail()
         
     }
 }

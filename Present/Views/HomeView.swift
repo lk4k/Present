@@ -12,6 +12,8 @@ struct HomeView: View {
     
     var body: some View {
         TabView{
+            FriendDetail()
+                .tabItem { Label("My Friends", systemImage: "person") }
             UserDetail()
                 .tabItem {
                     Label("My Info", systemImage: "person")}
