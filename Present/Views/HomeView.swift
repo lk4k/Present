@@ -12,7 +12,7 @@ struct HomeView: View {
     
     var body: some View {
         TabView{
-            AccountDetail()
+            UserDetail()
                 .tabItem {
                     Label("My Info", systemImage: "person")}
             SettingsView()

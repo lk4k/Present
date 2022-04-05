@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AccountDetail: View {
+struct UserDetail: View {
     @EnvironmentObject var userInfo : UserInfo
     
     var body: some View {
@@ -72,7 +72,7 @@ struct AccountDetail: View {
 
 struct AccountDetail_Previews: PreviewProvider {
     static var previews: some View {
-       AccountDetail()
+       UserDetail()
         
     }
 }
