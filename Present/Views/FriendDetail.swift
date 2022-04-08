@@ -32,7 +32,8 @@ struct FriendDetail: View {
                 Text(friendInfo.name)
                     .font(Font.custom("Nunito-ExtraLight", size: 30))
                 
-                //add buttons for liking and following
+                //add buttons for liking and
+                
                 
             }
             
