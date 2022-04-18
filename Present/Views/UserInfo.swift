@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class UserInfo : ObservableObject{
+class UserInfo : ObservableObject, Identifiable{
     var name : String
     var email : String
     var password : String
@@ -15,9 +15,14 @@ class UserInfo : ObservableObject{
     @Published var wishlist : String
     @Published var image: UIImage = UIImage(named: "user")!
     @Published var loggedIn : Bool
+    var uid = UUID()
     
     
     init(name : String = "", email : String = "", password : String = "", loggedIn : Bool = false, birthday: Date = Date(), wishlist : String = ""){
+        
+        FirebaseFunctions.signOut()
+        self.loggedIn = false
+        
         self.name = name
         self.email = email
         self.loggedIn = loggedIn
@@ -25,7 +30,7 @@ class UserInfo : ObservableObject{
         self.birthday = birthday
         self.wishlist = wishlist
         
-        //FirebaseFunctions.getUserInfo(self)
+        FirebaseFunctions.getUserInfo(self)
     }
 }
 

@@ -79,15 +79,15 @@ struct SettingsView: View {
                 
                 
                 
-                Button("Sign Out") {
-                    FirebaseFunctions.signOut(userInfo)
-                }
-                .frame(width: 200, height: 70)
-                .background(Color.Pink)
-                .foregroundColor(Color.black)
-                .cornerRadius(80.0)
-                .font(Font.custom("Nunito-ExtraLight", size: 30))
-                
+//                Button("Sign Out") {
+//                    FirebaseFunctions.signOut(userInfo)
+//                }
+//                .frame(width: 200, height: 70)
+//                .background(Color.Pink)
+//                .foregroundColor(Color.black)
+//                .cornerRadius(80.0)
+//                .font(Font.custom("Nunito-ExtraLight", size: 30))
+//
                 Spacer()
                 Spacer()
             }

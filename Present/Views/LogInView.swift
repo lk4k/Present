@@ -78,6 +78,10 @@ struct LogInView: View {
                     Button("sign up") {
                         FirebaseFunctions.authenticate(email: userInfo.email, password: userInfo.password){ success in
                             if success{
+                                
+                                //create user account
+                                
+                                
                                 userInfo.loggedIn = true
                             }
                         }
@@ -92,6 +96,7 @@ struct LogInView: View {
                     Button("sign in") {
                         FirebaseFunctions.login(email: userInfo.email, password: userInfo.password){ success in
                             if success{
+                                
                                 userInfo.loggedIn = true
                             }
                         }

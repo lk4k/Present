@@ -1,6 +1,6 @@
 //
 //  FirebaseFunctions.swift
-//  SlowmoGraham2
+//  Present
 //
 //  Created by Lauren Kelz (student LM) on 2/3/22.
 //
@@ -14,7 +14,10 @@ struct FirebaseFunctions{
     
     static func getUserInfo(_ userInfo: UserInfo){
         Auth.auth().addStateDidChangeListener {_, user in
-            guard let user = user else {return}
+            guard let user = user else {
+                print("failed to get user info")
+                return
+            }
             
             userInfo.email = user.email ?? ""
             userInfo.loggedIn = true
@@ -46,14 +49,15 @@ struct FirebaseFunctions{
         }
     }
     
-    static func signOut(_ userInfo: UserInfo){
+    static func signOut()//_ userInfo: UserInfo)
+    {
         //wraps failure exeption
         try? Auth.auth().signOut()
-        userInfo.loggedIn = false
+        //userInfo.loggedIn = false
     }
     
     static func addUserName(_ name: String){
-        //get the user's id. The name will be stored by this uid.
+        //get the user's id. The image will be stored by this uid.
         guard let uid = Auth.auth().currentUser?.uid else{
             return
         }
@@ -64,20 +68,6 @@ struct FirebaseFunctions{
             .setData(["name" : name], merge: true)//true means if the document already exists it appends image url to data that already exists
         
     }
-    
-    static func addUserBirthday(_ birthday: Date){
-        //get the user's id. The name will be stored by this uid.
-        guard let uid = Auth.auth().currentUser?.uid else{
-            return
-        }
-        
-        Firestore.firestore()
-            .collection("users")
-            .document(uid)
-            .setData(["birthday" : birthday], merge: true)//true means if the document already exists it appends image url to data that already exists
-        
-    }
-    
     
     static func uploadPicture(_ image: UIImage,completion: @escaping (Bool) -> ()){
         //get the user's id. The image will be stored by this uid.
@@ -129,6 +119,68 @@ struct FirebaseFunctions{
             }
         }
     }
+    
+    static func mergeUser(_ data: [String: Any], completion: @escaping (Error?) -> ()) {
+
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+
+
+
+        Firestore
+
+            .firestore()
+
+            .collection("users")
+
+            .document(uid)
+
+            .setData(data, merge: true) { (error) in
+
+                completion(error)
+
+                return
+
+            }
+
+    }
+    
+    static func createUser(_ userInfo: UserInfo,
+
+                           withEmail email:String,
+
+                           password:String,
+
+                           completion:@escaping (Error?) -> Void) {
+
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+
+
+            guard let uid = result?.user.uid else {
+
+                completion(error)
+
+                return
+
+            }
+
+            let data = ["uid": uid, "email": email]
+
+            userInfo.uid = UUID(uuidString: uid) ?? UUID()
+
+
+            FirebaseFunctions.mergeUser(data) { (result) in
+
+                completion(result)
+
+            }
+
+        }
+
+    }
+
+
+ 
+    
     
     static func login(email: String, password: String, completion: @escaping (Bool) -> ()){
         Auth.auth().signIn(withEmail: email, password: password){
