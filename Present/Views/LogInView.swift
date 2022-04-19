@@ -53,7 +53,7 @@ struct LogInView: View {
                     Image(systemName: "lock")
                         .resizable()
                         .frame(width: 25, height: 25)
-                  
+                    
                     Spacer()
                     Spacer()
                     
@@ -69,22 +69,29 @@ struct LogInView: View {
                     }}
                     .foregroundColor(Color.blue)
                     .font(Font.custom("Nunito-Light", size: 20))
-
+                
                 Spacer()
                 
                 HStack{
                     Spacer()
                     
                     Button("sign up") {
-                        FirebaseFunctions.authenticate(email: userInfo.email, password: userInfo.password){ success in
-                            if success{
+                        FirebaseFunctions
+                            .createUser(userInfo, withEmail: userInfo.email, password: userInfo.password, completion: { error in
                                 
-                                //create user account
-                                
-                                
-                                userInfo.loggedIn = true
-                            }
-                        }
+                                if error == nil {
+                                    FirebaseFunctions.authenticate(email: userInfo.email, password: userInfo.password){ success in
+                                        if success{
+                                            
+                                            userInfo.loggedIn = true
+                                        }
+                                    }
+                                }
+                                else{
+                                    print(error?.localizedDescription)
+                                }
+                            })
+                        
                     }
                     .frame(width: 150, height: 70)
                     .background(Color.Pink)

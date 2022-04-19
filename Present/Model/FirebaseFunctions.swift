@@ -39,8 +39,8 @@ struct FirebaseFunctions{
                         .reference(forURL: imageURL)
                         .getData(maxSize: 1 * 1024 * 1024) { data, _ in
                             if let imageData = data {
-                            userInfo.image = UIImage(data: imageData) ??
-                                UIImage(named: "user")!
+                                userInfo.image = UIImage(data: imageData) ??
+                                    UIImage(named: "user")!
                             }
                             
                         }
@@ -121,65 +121,62 @@ struct FirebaseFunctions{
     }
     
     static func mergeUser(_ data: [String: Any], completion: @escaping (Error?) -> ()) {
-
+        
         guard let uid = Auth.auth().currentUser?.uid else {return}
-
-
-
+        
+        
+        
         Firestore
-
+            
             .firestore()
-
+            
             .collection("users")
-
+            
             .document(uid)
-
+            
             .setData(data, merge: true) { (error) in
-
+                
                 completion(error)
-
+                
                 return
-
+                
             }
-
+        
     }
     
     static func createUser(_ userInfo: UserInfo,
-
+                           
                            withEmail email:String,
-
+                           
                            password:String,
-
+                           
                            completion:@escaping (Error?) -> Void) {
-
+        
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-
-
+            
+            
             guard let uid = result?.user.uid else {
-
+                
                 completion(error)
-
+                
                 return
-
+                
             }
-
+            
             let data = ["uid": uid, "email": email]
-
+            
             userInfo.uid = UUID(uuidString: uid) ?? UUID()
-
-
-            FirebaseFunctions.mergeUser(data) { (result) in
-
-                completion(result)
-
+            
+            FirebaseFunctions.mergeUser(data) { (error) in
+                completion(error)
             }
-
+            
         }
-
+        
     }
-
-
- 
+    
+    
+    
     
     
     static func login(email: String, password: String, completion: @escaping (Bool) -> ()){
