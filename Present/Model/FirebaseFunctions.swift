@@ -9,6 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseFirestore
+import SwiftUI
 
 struct FirebaseFunctions{
     
@@ -23,7 +24,7 @@ struct FirebaseFunctions{
             userInfo.loggedIn = true
             
             let uid = user.uid
-            
+            print(uid)
             Firestore
                 .firestore()
                 .collection("users")
@@ -31,19 +32,19 @@ struct FirebaseFunctions{
                 .getDocument { document, _ in
                     guard let document = document else {return}
                     //getting inforamtion from user's document
-                    let imageURL = document.get("image") as? String ?? ""
+//                    let imageURL = document.get("image") as? String ?? ""
                     userInfo.name = document.get("name") as? String ?? ""
                     
-                    Storage
-                        .storage()
-                        .reference(forURL: imageURL)
-                        .getData(maxSize: 1 * 1024 * 1024) { data, _ in
-                            if let imageData = data {
-                                userInfo.image = UIImage(data: imageData) ??
-                                    UIImage(named: "user")!
-                            }
-                            
-                        }
+//                    Storage
+//                        .storage()
+//                        .reference(forURL: imageURL)
+//                        .getData(maxSize: 1 * 1024 * 1024) { data, _ in
+//                            if let imageData = data {
+//                                userInfo.image = UIImage(data: imageData) ??
+//                                    UIImage(named: "user")!
+//                            }
+//
+//                        }
                 }
             
         }
@@ -69,7 +70,7 @@ struct FirebaseFunctions{
         
     }
     
-    static func uploadPicture(_ image: UIImage,completion: @escaping (Bool) -> ()){
+    static func uploadPicture(_ image: UIImage, completion: @escaping (Bool) -> ()){
         //get the user's id. The image will be stored by this uid.
         guard let uid = Auth.auth().currentUser?.uid else{
             completion(false)
@@ -168,6 +169,13 @@ struct FirebaseFunctions{
             userInfo.uid = UUID(uuidString: uid) ?? UUID()
             
             FirebaseFunctions.mergeUser(data) { (error) in
+                
+//                if error == nil{
+//                    // call upload picture.
+//                    FirebaseFunctions.uploadPicture(UIImage(imageLiteralResourceName: "user")) { _ in
+//                    }
+//                }
+                
                 completion(error)
             }
             

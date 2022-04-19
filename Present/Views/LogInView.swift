@@ -76,6 +76,8 @@ struct LogInView: View {
                     Spacer()
                     
                     Button("sign up") {
+                        
+                        
                         FirebaseFunctions
                             .createUser(userInfo, withEmail: userInfo.email, password: userInfo.password, completion: { error in
                                 

@@ -20,8 +20,8 @@ class UserInfo : ObservableObject, Identifiable{
     
     init(name : String = "", email : String = "", password : String = "", loggedIn : Bool = false, birthday: Date = Date(), wishlist : String = ""){
         
-        FirebaseFunctions.signOut()
-        self.loggedIn = false
+        //FirebaseFunctions.signOut()
+        //self.loggedIn = false
         
         self.name = name
         self.email = email
@@ -30,7 +30,7 @@ class UserInfo : ObservableObject, Identifiable{
         self.birthday = birthday
         self.wishlist = wishlist
         
-        //FirebaseFunctions.getUserInfo(self)
+        FirebaseFunctions.getUserInfo(self)
     }
 }
 
