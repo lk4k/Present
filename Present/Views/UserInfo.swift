@@ -32,5 +32,31 @@ class UserInfo : ObservableObject, Identifiable{
         
         FirebaseFunctions.getUserInfo(self)
     }
+    
+    // used for Firestore database.
+
+        func dataAsDictionary() -> [String: Any]{
+            
+
+            var data : [String: Any] = [
+
+                "name": name,
+
+                "email": email,
+
+                "wishlist": wishlist,
+
+                "birthday": birthday,
+
+                "password": password
+
+            ]
+
+            return data
+
+        }
+    
 }
+
+
 

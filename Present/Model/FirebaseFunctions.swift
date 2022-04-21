@@ -50,11 +50,11 @@ struct FirebaseFunctions{
         }
     }
     
-    static func signOut()//_ userInfo: UserInfo)
+    static func signOut(_ userInfo: UserInfo)
     {
         //wraps failure exeption
         try? Auth.auth().signOut()
-        //userInfo.loggedIn = false
+        userInfo.loggedIn = false
     }
     
     static func addUserName(_ name: String){
@@ -70,6 +70,32 @@ struct FirebaseFunctions{
         
     }
     
+    static func addBirthday(_ bday: Date){
+        //get the user's id. The image will be stored by this uid.
+        guard let uid = Auth.auth().currentUser?.uid else{
+            return
+        }
+        
+        Firestore.firestore()
+            .collection("users")
+            .document(uid)
+            .setData(["birthday" : bday], merge: true)//true means if the document already exists it appends image url to data that already exists
+        
+    }
+    
+    static func addWishlist(_ wishlist: String){
+        //get the user's id. The image will be stored by this uid.
+        guard let uid = Auth.auth().currentUser?.uid else{
+            return
+        }
+        
+        Firestore.firestore()
+            .collection("users")
+            .document(uid)
+            .setData(["wishlist" : wishlist], merge: true)//true means if the document already exists it appends image url to data that already exists
+        
+    }
+
     static func uploadPicture(_ image: UIImage, completion: @escaping (Bool) -> ()){
         //get the user's id. The image will be stored by this uid.
         guard let uid = Auth.auth().currentUser?.uid else{
@@ -182,9 +208,6 @@ struct FirebaseFunctions{
         }
         
     }
-    
-    
-    
     
     
     static func login(email: String, password: String, completion: @escaping (Bool) -> ()){

@@ -10,7 +10,7 @@ import SwiftUI
 struct LogInView: View {
     
     @EnvironmentObject var userInfo : UserInfo
-    //@StateObject var userInfo = UserInfo()
+    @State private var showSheet = false
     
     var body: some View {
         ZStack {
@@ -77,6 +77,7 @@ struct LogInView: View {
                     
                     Button("sign up") {
                         
+                        showSheet = true
                         
                         FirebaseFunctions
                             .createUser(userInfo, withEmail: userInfo.email, password: userInfo.password, completion: { error in
@@ -123,7 +124,13 @@ struct LogInView: View {
                 
                 Spacer()
             }
-        }
+        }.sheet(isPresented: $showSheet, onDismiss: {
+            FirebaseFunctions.addUserName(userInfo.name)
+            FirebaseFunctions.addBirthday(userInfo.birthday)
+            FirebaseFunctions.addWishlist(userInfo.wishlist)
+        } , content: {
+            CreateUserInfo()
+        })
     }
     
 }
