@@ -15,9 +15,9 @@ class UserInfo : ObservableObject, Identifiable{
     @Published var wishlist : String
     @Published var image: UIImage = UIImage(named: "user")!
     @Published var loggedIn : Bool
-    //FIX
-    //@Published var friend : FriendInfo = FriendInfo()
     @Published var friends : [FriendInfo] = [FriendInfo]()
+//        = [FriendInfo(email: "Claire@gmail.com", name: "Claire", birthday: Date("2004-12-28"), wishlist: "I want a 3D printer"),
+//        FriendInfo(email: "Ella@gmail.com", name: "Ella", birthday: Date("2005-07-08"), wishlist: "I want a 3D printer")]
     var uid = UUID()
     
     

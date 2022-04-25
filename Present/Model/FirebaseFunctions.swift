@@ -258,7 +258,7 @@ struct FirebaseFunctions{
                     
                     for document in (snapshot?.documents)! {
                         
-                        if let Frienduid = document.data()["uid"]{
+                        if let FriendUID = document.data()["uid"]{
                             
                             Firestore
                                 
@@ -266,7 +266,7 @@ struct FirebaseFunctions{
                                 
                                 .collection("users")
                                 
-                                .document(Frienduid as! String)
+                                .document(FriendUID as! String)
                                 
                                 .getDocument{ (document, err) in
                                     guard let data = document?.data()

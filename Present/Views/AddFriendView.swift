@@ -28,6 +28,9 @@ struct AddFriendView: View {
                 }
                 
             })
+            FirebaseFunctions.mergeUser(userInfo.dataAsDictionary()) { _ in
+                
+            }
         }
         
     }
