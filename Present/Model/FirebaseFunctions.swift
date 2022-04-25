@@ -32,19 +32,19 @@ struct FirebaseFunctions{
                 .getDocument { document, _ in
                     guard let document = document else {return}
                     //getting inforamtion from user's document
-//                    let imageURL = document.get("image") as? String ?? ""
+                    //                    let imageURL = document.get("image") as? String ?? ""
                     userInfo.name = document.get("name") as? String ?? ""
                     
-//                    Storage
-//                        .storage()
-//                        .reference(forURL: imageURL)
-//                        .getData(maxSize: 1 * 1024 * 1024) { data, _ in
-//                            if let imageData = data {
-//                                userInfo.image = UIImage(data: imageData) ??
-//                                    UIImage(named: "user")!
-//                            }
-//
-//                        }
+                    //                    Storage
+                    //                        .storage()
+                    //                        .reference(forURL: imageURL)
+                    //                        .getData(maxSize: 1 * 1024 * 1024) { data, _ in
+                    //                            if let imageData = data {
+                    //                                userInfo.image = UIImage(data: imageData) ??
+                    //                                    UIImage(named: "user")!
+                    //                            }
+                    //
+                    //                        }
                 }
             
         }
@@ -95,7 +95,7 @@ struct FirebaseFunctions{
             .setData(["wishlist" : wishlist], merge: true)//true means if the document already exists it appends image url to data that already exists
         
     }
-
+    
     static func uploadPicture(_ image: UIImage, completion: @escaping (Bool) -> ()){
         //get the user's id. The image will be stored by this uid.
         guard let uid = Auth.auth().currentUser?.uid else{
@@ -196,11 +196,11 @@ struct FirebaseFunctions{
             
             FirebaseFunctions.mergeUser(data) { (error) in
                 
-//                if error == nil{
-//                    // call upload picture.
-//                    FirebaseFunctions.uploadPicture(UIImage(imageLiteralResourceName: "user")) { _ in
-//                    }
-//                }
+                //                if error == nil{
+                //                    // call upload picture.
+                //                    FirebaseFunctions.uploadPicture(UIImage(imageLiteralResourceName: "user")) { _ in
+                //                    }
+                //                }
                 
                 completion(error)
             }
@@ -208,7 +208,6 @@ struct FirebaseFunctions{
         }
         
     }
-    
     
     static func login(email: String, password: String, completion: @escaping (Bool) -> ()){
         Auth.auth().signIn(withEmail: email, password: password){
@@ -237,4 +236,58 @@ struct FirebaseFunctions{
             }
         }
     }
+    
+    static func getFriendFromEmail(userInfo: UserInfo, email: String, completion: @escaping (Bool) -> ()){
+        
+        let collectionRef = Firestore
+            
+            .firestore()
+            
+            .collection("users")
+        
+        
+        collectionRef.whereField("email", isEqualTo: email)
+            
+            .getDocuments { (snapshot, err) in
+                
+                if err != nil || (snapshot?.isEmpty)! {
+                    
+                    completion(false)
+                    
+                } else {
+                    
+                    for document in (snapshot?.documents)! {
+                        
+                        if let Frienduid = document.data()["uid"]{
+                            
+                            Firestore
+                                
+                                .firestore()
+                                
+                                .collection("users")
+                                
+                                .document(Frienduid as! String)
+                                
+                                .getDocument{ (document, err) in
+                                    guard let data = document?.data()
+                                    
+                                    else {
+                                        completion(true)
+                                        return
+                                    }
+                                    
+                                    userInfo.friends.append(FriendInfo(data: data))
+                                }
+                        
+                            completion(true)
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+    }
 }
+

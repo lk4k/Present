@@ -8,41 +8,44 @@
 import SwiftUI
 
 struct FriendDetail: View {
-    //@EnvironmentObject var friendInfo : FriendInfo
-    
-    var friendInfo: FriendInfo = FriendInfo(name: "Jamie", birthday: Date(), wishlist: "bread")
+    @EnvironmentObject var userInfo : UserInfo
+    //var defaultFriend: FriendInfo = FriendInfo(name: "Jamie", birthday: Date(), wishlist: "bread")
+    @State private var showSheet = false
     
     var body: some View {
-        
-        //need to pull friends infomations
-        
         VStack{
-            
-            
-            Image(systemName: "person.crop.circle")
-                .resizable()
-                .foregroundColor(Color.green)
-                .frame(width: 200, height: 200)
-                .aspectRatio(contentMode: .fill)
-                .clipShape(Circle())
-            
-            //displaying variables
+            Text("Friends").font(Font.custom("Nunito-ExtraLight", size: 40))
+                
             HStack{
+                Spacer()
                 
-                Text(friendInfo.name)
-                    .font(Font.custom("Nunito-ExtraLight", size: 30))
-                
-                //add buttons for liking and
-                
+                Button("+"){
+                    //add pull friend info function
+                     showSheet = true
+                }.frame(width: 70, height: 70)
+                                .background(Color.Pink)
+                                .foregroundColor(Color.black)
+                                .cornerRadius(80.0)
+                                .font(Font.custom("Nunito-ExtraLight", size: 20))
                 
             }
             
-            
-            HStack{
-                Text("wishlist:").font(Font.custom("Nunito-ExtraLight", size: 30))
-                Text(friendInfo.wishlist).font(Font.custom("Nunito-ExtraLight", size: 23))
+            List(userInfo.friends){
+                friend in
+                VStack{
+                    Text("name: \(friend.name)").font(Font.custom("Nunito-ExtraLight", size: 30))
+                    Text("birthday: ").font(Font.custom("Nunito-ExtraLight", size: 30))
+                    Text(friend.birthday, style: .date).font(Font.custom("Nunito-ExtraLight", size: 30))
+                
+                    Text("wishlist: \(friend.wishlist)").font(Font.custom("Nunito-ExtraLight", size: 30))
+                    
+                }
+                
             }
-        }
+        
+        }.sheet(isPresented: $showSheet, content: {
+            AddFriendView(email: "please type in your friend's email")
+        })
         
         
         

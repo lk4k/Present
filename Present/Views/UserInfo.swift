@@ -15,6 +15,9 @@ class UserInfo : ObservableObject, Identifiable{
     @Published var wishlist : String
     @Published var image: UIImage = UIImage(named: "user")!
     @Published var loggedIn : Bool
+    //FIX
+    //@Published var friend : FriendInfo = FriendInfo()
+    @Published var friends : [FriendInfo] = [FriendInfo]()
     var uid = UUID()
     
     
@@ -48,7 +51,9 @@ class UserInfo : ObservableObject, Identifiable{
 
                 "birthday": birthday,
 
-                "password": password
+                "password": password,
+                
+                "friends" : friends
 
             ]
 

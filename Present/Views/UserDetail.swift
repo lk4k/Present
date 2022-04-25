@@ -41,26 +41,37 @@ struct UserDetail: View {
             
             //displaying variables
             HStack{
-            Text(userInfo.name).font(Font.custom("Nunito-ExtraLight", size: 30))
-                Button("friend") {
-                    
-                }.frame(width: 150, height: 70)
-                .background(Color.Pink)
-                .foregroundColor(Color.black)
-                .cornerRadius(80.0)
-                .font(Font.custom("Nunito-ExtraLight", size: 23))
-                Button("favorite"){
-                    
-                }.frame(width: 150, height: 70)
-                .background(Color.Pink)
-                .foregroundColor(Color.black)
-                .cornerRadius(80.0)
-                .font(Font.custom("Nunito-ExtraLight", size: 20))
+            Text("Name: \(userInfo.name)").font(Font.custom("Nunito-ExtraLight", size: 30))
+               
+                
+//                Button("friend") {
+//
+//                }.frame(width: 150, height: 70)
+//                .background(Color.Pink)
+//                .foregroundColor(Color.black)
+//                .cornerRadius(80.0)
+//                .font(Font.custom("Nunito-ExtraLight", size: 23))
+//
+//
+//                Button("favorite"){
+//
+//                }.frame(width: 150, height: 70)
+//                .background(Color.Pink)
+//                .foregroundColor(Color.black)
+//                .cornerRadius(80.0)
+//                .font(Font.custom("Nunito-ExtraLight", size: 20))
+                
             }
-            HStack{
-                Text("wishlist:").font(Font.custom("Nunito-ExtraLight", size: 30))
-            Text(userInfo.wishlist).font(Font.custom("Nunito-ExtraLight", size: 23))
-            }
+            
+            
+                Text("birthday: ").font(Font.custom("Nunito-ExtraLight", size: 30))
+                Text(userInfo.birthday, style: .date).font(Font.custom("Nunito-ExtraLight", size: 30))
+            
+
+                Text("wishlist: \(userInfo.wishlist)").font(Font.custom("Nunito-ExtraLight", size: 30))
+            
+            
+            
         }
        
      

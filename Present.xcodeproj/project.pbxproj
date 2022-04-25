@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		621D7478280F358300006B99 /* CreateUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621D7477280F358300006B99 /* CreateUserInfo.swift */; };
+		621D747A28131DBC00006B99 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621D747928131DBB00006B99 /* AddFriendView.swift */; };
 		623AEBB127C8144100247391 /* PresentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEBB027C8144100247391 /* PresentApp.swift */; };
 		623AEBB327C8144100247391 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEBB227C8144100247391 /* ContentView.swift */; };
 		623AEBB527C8144300247391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 623AEBB427C8144300247391 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		1A6AA3A89D2DB3BF43B43F9C /* Pods-Present.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Present.debug.xcconfig"; path = "Target Support Files/Pods-Present/Pods-Present.debug.xcconfig"; sourceTree = "<group>"; };
 		254C8E89ADA5834437FF8E6A /* Pods_Present.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Present.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		621D7477280F358300006B99 /* CreateUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserInfo.swift; sourceTree = "<group>"; };
+		621D747928131DBB00006B99 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 		623AEBAD27C8144100247391 /* Present.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Present.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		623AEBB027C8144100247391 /* PresentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentApp.swift; sourceTree = "<group>"; };
 		623AEBB227C8144100247391 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../New Group/ContentView.swift"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				AE27E50C27FB4C690084A50D /* FriendInfo.swift */,
 				621D7477280F358300006B99 /* CreateUserInfo.swift */,
 				623AEBEF27DA68E900247391 /* DataParsing.swift */,
+				621D747928131DBB00006B99 /* AddFriendView.swift */,
 				623AEBB227C8144100247391 /* ContentView.swift */,
 				623AEBE727CE96A300247391 /* UserDetail.swift */,
 				629DA5B027FCAEC300E96BB0 /* FriendDetail.swift */,
@@ -402,6 +405,7 @@
 				623AEBE627CD1B4400247391 /* LogInView.swift in Sources */,
 				623AEBB327C8144100247391 /* ContentView.swift in Sources */,
 				623AEBE827CE96A300247391 /* UserDetail.swift in Sources */,
+				621D747A28131DBC00006B99 /* AddFriendView.swift in Sources */,
 				623AEBEC27CE9C2900247391 /* SettingsView.swift in Sources */,
 				623AEBB127C8144100247391 /* PresentApp.swift in Sources */,
 				623AEBE027CD1AE500247391 /* FirebaseFunctions.swift in Sources */,
