@@ -269,14 +269,15 @@ struct FirebaseFunctions{
                                 .document(FriendUID as! String)
                                 
                                 .getDocument{ (document, err) in
-                                    guard let data = document?.data()
-                                    
-                                    else {
-                                        completion(true)
+                                    guard let data = document?.data() else {
+                                        completion(false)
                                         return
                                     }
                                     
                                     userInfo.friends.append(FriendInfo(data: data))
+                                    mergeUser(userInfo.dataAsDictionary()) { _ in
+                                        
+                                    }
                                 }
                         
                             completion(true)

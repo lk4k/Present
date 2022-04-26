@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 class FriendInfo : ObservableObject, Identifiable{
     var name : String
@@ -24,14 +25,15 @@ class FriendInfo : ObservableObject, Identifiable{
     }
     
     init(data: [String: Any]){
+       print(data)
         if let name = data["name"] as? String{
             self.name = name
         }
         else {
             self.name = "name not found"
         }
-        if let birthday = data["birthday"] as? Date{
-            self.birthday = birthday
+        if let birthday = data["birthday"] as? Timestamp{
+            self.birthday = birthday.dateValue()
         }
         else{
             self.birthday = Date()
@@ -49,4 +51,26 @@ class FriendInfo : ObservableObject, Identifiable{
             self.email = "email not found"
         }
     }
+    
+    func dataAsDictionary() -> [String: Any]{
+        
+
+        let data : [String: Any] = [
+
+            "name": name,
+
+            "email": email,
+
+            "wishlist": wishlist,
+
+            "birthday": birthday
+        
+        ]
+
+        return data
+
+    }
+    
+    
+    
 }

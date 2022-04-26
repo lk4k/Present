@@ -21,6 +21,7 @@ class UserInfo : ObservableObject, Identifiable{
     var uid = UUID()
     
     
+    
     init(name : String = "", email : String = "", password : String = "", loggedIn : Bool = false, birthday: Date = Date(), wishlist : String = ""){
         
         //FirebaseFunctions.signOut()
@@ -39,9 +40,13 @@ class UserInfo : ObservableObject, Identifiable{
     // used for Firestore database.
 
         func dataAsDictionary() -> [String: Any]{
+            var friends : [String: Any] = [String: Any]()
             
+            for friend in self.friends{
+                friends[friend.id.uuidString] = friend.dataAsDictionary()
+            }
 
-            var data : [String: Any] = [
+            let data : [String: Any] = [
 
                 "name": name,
 

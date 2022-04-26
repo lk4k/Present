@@ -34,8 +34,7 @@ struct FriendDetail: View {
                 friend in
                 VStack{
                     Text("name: \(friend.name)").font(Font.custom("Nunito-ExtraLight", size: 30))
-                    Text("birthday: ").font(Font.custom("Nunito-ExtraLight", size: 30))
-                    Text(friend.birthday, style: .date).font(Font.custom("Nunito-ExtraLight", size: 30))
+                    Text("birthday: \(friend.birthday)").font(Font.custom("Nunito-ExtraLight", size: 30))
                 
                     Text("wishlist: \(friend.wishlist)").font(Font.custom("Nunito-ExtraLight", size: 30))
                     

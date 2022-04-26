@@ -18,6 +18,7 @@ struct AddFriendView: View {
         Button("add my friend") {
             FirebaseFunctions.getFriendFromEmail(userInfo: userInfo, email: email, completion: {success in
                 if success {
+                    print(userInfo.dataAsDictionary())
                     print("friend found")
                     FirebaseFunctions.mergeUser(userInfo.dataAsDictionary(), completion: {_ in
                         
@@ -28,9 +29,9 @@ struct AddFriendView: View {
                 }
                 
             })
-            FirebaseFunctions.mergeUser(userInfo.dataAsDictionary()) { _ in
-                
-            }
+//            FirebaseFunctions.mergeUser(userInfo.dataAsDictionary()) { _ in
+//
+//            }
         }
         
     }
