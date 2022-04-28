@@ -68,6 +68,9 @@ struct CreateUserInfo: View {
                                             userInfo.loggedIn = true
                                         }
                                     }
+                                    FirebaseFunctions.addUserName(userInfo.name)
+                                    FirebaseFunctions.addBirthday(userInfo.birthday)
+                                    FirebaseFunctions.addWishlist(userInfo.wishlist)
                                 }
                                 else{
                                     print(error?.localizedDescription)
