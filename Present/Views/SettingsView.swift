@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var userInfo : UserInfo
+    //@StateObject var userInfo: UserInfo = UserInfo()
+    
     @State private var showSheet = false
     
     
@@ -21,27 +23,27 @@ struct SettingsView: View {
                 
                 Spacer()
                 
-//                Image(systemName: "person.crop.circle")
-//                    .resizable()
-//                    .foregroundColor(Color.Pink)
-//                    .frame(width: 200, height: 200)
-//                    .aspectRatio(contentMode: .fill)
-//                    .clipShape(Circle())
-//
+                //                Image(systemName: "person.crop.circle")
+                //                    .resizable()
+                //                    .foregroundColor(Color.Pink)
+                //                    .frame(width: 200, height: 200)
+                //                    .aspectRatio(contentMode: .fill)
+                //                    .clipShape(Circle())
+                //
                 
-                Image(systemName: "person")
+                //Image(systemName: "person")
                 Spacer()
                 VStack {
                     //change image
-//                    Button("change picture") {
-//                        self.showSheet.toggle()
-//                    }
-//                    .frame(width: 250, height: 70)
-//                    .background(Color.Pink)
-//                    .foregroundColor(Color.black)
-//                    .cornerRadius(80.0)
-//                    .font(Font.custom("Nunito-ExtraLight", size: 30))
-//
+                    //                    Button("change picture") {
+                    //                        self.showSheet.toggle()
+                    //                    }
+                    //                    .frame(width: 250, height: 70)
+                    //                    .background(Color.Pink)
+                    //                    .foregroundColor(Color.black)
+                    //                    .cornerRadius(80.0)
+                    //                    .font(Font.custom("Nunito-ExtraLight", size: 30))
+                    //
                     
                     //name
                     HStack{
@@ -53,43 +55,52 @@ struct SettingsView: View {
                     .foregroundColor(Color.black)
                     .font(Font.custom("Nunito-ExtraLight", size: 30))
                     .padding()
-                                        
+                    
                     //birthday
                     
                     
                     DatePicker("birthday", selection: $userInfo.birthday)
                         .datePickerStyle(CompactDatePickerStyle())
                         .foregroundColor(Color.black)
-                        .font(Font.custom("Nunito-ExtraLight", size: 28))
+                        .font(Font.custom("Nunito-ExtraLight", size: 25))
                         .padding()
-                
+                    
                     
                     //add wishlish
-                    TextField("Wishlist", text: $userInfo.wishlist)
+                    //Text("wishlist")
+                      //  .font(Font.custom("Nunito-ExtraLight", size: 25))
+                    TextField("wishlist", text: $userInfo.wishlist)
                         .disableAutocorrection(false)
-                        .font(Font.custom("Nunito-ExtraLight", size: 22))
-                        .padding()
+                        .multilineTextAlignment(.center)
+                        .font(Font.custom("Nunito-ExtraLight", size: 25))
+                        .frame(width: 300, height: 300, alignment: .top)
+                        .background(Color.Blue)
+                        .cornerRadius(20.0)
                         
+                        .padding()
+                    
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    
                     Button("update account") {
                         FirebaseFunctions.mergeUser(userInfo.dataAsDictionary(), completion: {_ in })                    }
-                    .frame(width: 250, height: 70)
-                    .background(Color.Pink)
-                    .foregroundColor(Color.black)
-                    .cornerRadius(80.0)
-                    .font(Font.custom("Nunito-ExtraLight", size: 30))
+                        .frame(width: 250, height: 70)
+                        .background(Color.Pink)
+                        .foregroundColor(Color.black)
+                        .cornerRadius(80.0)
+                        .font(Font.custom("Nunito-ExtraLight", size: 30))
                     
-
+                    
                     
                 }.foregroundColor(Color.black)
                 .padding()
-
-                Spacer()
-                Spacer()
-                Spacer()
                 
                 
                 
-                Button("Sign Out") {
+                
+                
+                Button("sign out") {
                     FirebaseFunctions.signOut(userInfo)
                 }
                 .frame(width: 200, height: 70)
@@ -97,7 +108,7 @@ struct SettingsView: View {
                 .foregroundColor(Color.black)
                 .cornerRadius(80.0)
                 .font(Font.custom("Nunito-ExtraLight", size: 30))
-
+                
                 Spacer()
                 Spacer()
             }

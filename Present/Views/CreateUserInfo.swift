@@ -10,6 +10,8 @@ import SwiftUI
 struct CreateUserInfo: View {
     @EnvironmentObject var userInfo : UserInfo
     
+    //@StateObject var userInfo: UserInfo = UserInfo()
+
     
     var body: some View {
         ZStack {
@@ -45,7 +47,7 @@ struct CreateUserInfo: View {
                     DatePicker("birthday", selection: $userInfo.birthday)
                         .datePickerStyle(CompactDatePickerStyle())
                         .foregroundColor(Color.black)
-                        .font(Font.custom("Nunito-ExtraLight", size: 30))
+                        .font(Font.custom("Nunito-ExtraLight", size: 28))
                         .padding()
                    
         

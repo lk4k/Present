@@ -10,6 +10,9 @@ import SwiftUI
 struct LogInView: View {
     
     @EnvironmentObject var userInfo : UserInfo
+    
+    //@StateObject var userInfo: UserInfo = UserInfo()
+
     @State private var showSheet = false
     
     var body: some View {
@@ -19,10 +22,15 @@ struct LogInView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack{
+                Spacer()
+
+                Image("birthDaveImage")
+                    .resizable()
+                    .frame(width: 2*100, height: 2*114, alignment: .center)
                 
                 Text("present")
-                    .font(Font.custom("Nunito-ExtraLight", size: 50))
-                    .padding(70)
+                    .font(Font.custom("Nunito-ExtraLight", size: 80))
+                    .padding()
                 
                 
                 
