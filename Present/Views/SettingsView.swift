@@ -47,7 +47,7 @@ struct SettingsView: View {
                         .multilineTextAlignment(.center)
                         .font(Font.custom("Nunito-ExtraLight", size: 25))
                         .frame(width: 300, height: 300, alignment: .top)
-                        .background(Color.Blue)
+                        .background(Color.blue)
                         .cornerRadius(20.0)
                         
                         .padding()
