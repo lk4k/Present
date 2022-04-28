@@ -17,7 +17,6 @@ struct SettingsView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 
-               
                 Spacer()
                 VStack {
                     //name
@@ -57,6 +56,7 @@ struct SettingsView: View {
                     Spacer()
                     
                     Button("update account") {
+                        FirebaseFunctions.addUserName(userInfo.name)
                         FirebaseFunctions.mergeUser(userInfo.dataAsDictionary(), completion: {_ in })                    }
                         .frame(width: 250, height: 70)
                         .background(Color.Pink)

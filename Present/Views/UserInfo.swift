@@ -47,18 +47,18 @@ class UserInfo : ObservableObject, Identifiable{
 
             let data : [String: Any] = [
 
-                "name": name,
-
-                "email": email,
-
-                "wishlist": wishlist,
-
                 "birthday": birthday,
+                
+                "email": email,
+                
+                "friends" : friends,
 
+                "name": name,
+                
                 "password": password,
                 
-                "friends" : friends
-
+                "wishlist": wishlist
+                
             ]
 
             return data

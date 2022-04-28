@@ -55,21 +55,25 @@ struct CreateUserInfo: View {
                             .createUser(userInfo, withEmail: userInfo.email, password: userInfo.password, completion: { error in
                                 
                                 if error == nil {
-                                    FirebaseFunctions.authenticate(email: userInfo.email, password: userInfo.password){ success in
-                                        if success{
-                                            
-                                            userInfo.loggedIn = true
-                                        }
-                                    }
                                     FirebaseFunctions.addUserName(userInfo.name)
                                     FirebaseFunctions.addBirthday(userInfo.birthday)
                                     FirebaseFunctions.addWishlist(userInfo.wishlist)
+                                    
+                                    FirebaseFunctions.authenticate(email: userInfo.email, password: userInfo.password){ success in
+                                        if success{
+                                    
+                                            userInfo.loggedIn = true
+                                        }
+                                    }
                                 }
                                 else{
                                     print(error?.localizedDescription)
                                     print("login failed")
                                 }
                             })
+                        FirebaseFunctions.mergeUser(userInfo.dataAsDictionary()) { _ in
+                            
+                        }
                     }.frame(width: 300, height: 70)
                     .background(Color.Pink)
                     .foregroundColor(Color.black)

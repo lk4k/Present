@@ -32,7 +32,7 @@ struct FirebaseFunctions{
                 .getDocument { document, _ in
                     guard let document = document else {return}
                     //getting inforamtion from user's document
-                    userInfo.name = document.get("name") as? String ?? ""
+                    userInfo.email = document.get("email") as? String ?? ""
                     
                 }
             

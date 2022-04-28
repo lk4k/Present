@@ -14,7 +14,8 @@ struct UserDetail: View {
     var body: some View {
         VStack{
             //displaying variables
-            Text("name: \(userInfo.name)").font(Font.custom("Nunito-ExtraLight", size: 30))
+            Text("name: ").font(Font.custom("Nunito-ExtraLight", size: 30))
+            Text(userInfo.name).font(Font.custom("Nunito-ExtraLight", size: 30))
             
                 Text("birthday: ").font(Font.custom("Nunito-ExtraLight", size: 30))
                 Text(userInfo.birthday, style: .date).font(Font.custom("Nunito-ExtraLight", size: 30))
