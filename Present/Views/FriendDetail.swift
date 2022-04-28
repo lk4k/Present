@@ -59,7 +59,7 @@ struct FriendDetail: View {
         }
         
     }.sheet(isPresented: $friendShowSheet, content: {
-        AddFriendView(email: "")
+        AddFriendView(email: "", friendShowSheet: $friendShowSheet)
     })
     
 }

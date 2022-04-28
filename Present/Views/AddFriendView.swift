@@ -25,12 +25,12 @@ struct AddFriendView: View {
                     FirebaseFunctions.mergeUser(userInfo.dataAsDictionary(), completion: {_ in
                         
                     })
+                    friendShowSheet = false
                 }
                 else {
                     print("friend not found")
                 }
             })
-        friendShowSheet = false
 //            FirebaseFunctions.mergeUser(userInfo.dataAsDictionary()) { _ in
 //
 //            }
