@@ -70,7 +70,7 @@ struct CreateUserInfo: View {
                                     print("login failed")
                                 }
                             })
-                    }.frame(width: 150, height: 70)
+                    }.frame(width: 300, height: 70)
                     .background(Color.Pink)
                     .foregroundColor(Color.black)
                     .cornerRadius(80.0)
