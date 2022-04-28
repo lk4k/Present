@@ -34,7 +34,7 @@ struct AddFriendView: View {
 //            FirebaseFunctions.mergeUser(userInfo.dataAsDictionary()) { _ in
 //
 //            }
-        }.frame(width: 70, height: 70)
+        }.frame(width: 200, height: 70)
         .background(Color.Pink)
         .foregroundColor(Color.black)
         .cornerRadius(80.0)
