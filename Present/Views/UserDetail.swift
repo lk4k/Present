@@ -12,7 +12,7 @@ struct UserDetail: View {
     @EnvironmentObject var userInfo : UserInfo
     
     var body: some View {
-        
+        VStack{
             //displaying variables
             Text("name: \(userInfo.name)").font(Font.custom("Nunito-ExtraLight", size: 30))
             
@@ -21,7 +21,7 @@ struct UserDetail: View {
             
 
                 Text("wishlist: \(userInfo.wishlist)").font(Font.custom("Nunito-ExtraLight", size: 30))
-            
+        }
             
         }
        
