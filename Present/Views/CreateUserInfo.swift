@@ -74,6 +74,7 @@ struct CreateUserInfo: View {
                                 }
                                 else{
                                     print(error?.localizedDescription)
+                                    print("login failed")
                                 }
                             })
                     }.frame(width: 150, height: 70)
