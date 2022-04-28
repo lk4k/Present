@@ -39,11 +39,11 @@ struct FriendDetail: View {
                     
                     Text("wishlist: \(friend.wishlist)").font(Font.custom("Nunito-ExtraLight", size: 30))
                     
-                    Toggle("Notifications", isOn: $wantNotifications)
+                    Toggle("Notifications", isOn: $wantNotifications).font(Font.custom("Nunito-ExtraLight", size: 20))
                     if wantNotifications{
                         Button("Request permission"){
                             NotificationManager.instance.requestAuthorization()
-                        }
+                        }.font(Font.custom("Nunito-ExtraLight", size: 20))
                         /*
                          Button("Schedule notification"){
                          NotificationManager.instance.scheduleNotification(notificationHour : 9, notificationDay : friend.birthday.get(Calendar.Component.day), notificationMonth : friend.birthday.get(Calendar.Component.month), notificationMinute : 1)
@@ -51,7 +51,7 @@ struct FriendDetail: View {
                          */
                         Button("Schedule Notification"){
                             NotificationManager.instance.scheduleNotification(notificationHour : 12, notificationDay : 27, notificationMonth : 04, notificationMinute : 57, friendName : friend.name)
-                    }
+                    }.font(Font.custom("Nunito-ExtraLight", size: 20))
                 }
                 
             }.background(Color.init(red: 249/255, green: 229/255, blue: 218/255))
