@@ -60,8 +60,9 @@ struct SettingsView: View {
                     DatePicker("birthday", selection: $userInfo.birthday)
                         .datePickerStyle(CompactDatePickerStyle())
                         .foregroundColor(Color.black)
-                        .font(Font.custom("Nunito-ExtraLight", size: 30))
+                        .font(Font.custom("Nunito-ExtraLight", size: 28))
                         .padding()
+                
                     
                     //add wishlish
                     TextField("Wishlist", text: $userInfo.wishlist)

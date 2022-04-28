@@ -13,13 +13,13 @@ struct HomeView: View {
     var body: some View {
         TabView{
             FriendDetail()
-               .tabItem { Label("My Friends", systemImage: "person") }
+               .tabItem { Label("my friends", systemImage: "person.3")}
             UserDetail()
                 .tabItem {
-                    Label("My Info", systemImage: "person")}
+                    Label("my info", systemImage: "person")}
             SettingsView()
                 .tabItem {
-                    Label("Settings", systemImage: "gear")
+                    Label("settings", systemImage: "gear")
                 }
             
         }

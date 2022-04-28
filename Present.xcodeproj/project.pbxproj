@@ -30,6 +30,7 @@
 		629DA5B127FCAEC300E96BB0 /* FriendDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629DA5B027FCAEC300E96BB0 /* FriendDetail.swift */; };
 		9E7CFE703B4A3F0F45F9E909 /* Pods_Present.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254C8E89ADA5834437FF8E6A /* Pods_Present.framework */; };
 		AE27E50D27FB4C690084A50D /* FriendInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE27E50C27FB4C690084A50D /* FriendInfo.swift */; };
+		BA675477280DD639000C634B /* userDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA675476280DD639000C634B /* userDataBase.swift */; };
 		E28C77CC27ECDEF200757463 /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28C77CB27ECDEF200757463 /* Nunito-ExtraLight.ttf */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		629DA5B027FCAEC300E96BB0 /* FriendDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetail.swift; sourceTree = "<group>"; };
 		8D00727F23FB59E3C85CDE8C /* Pods-Present.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Present.release.xcconfig"; path = "Target Support Files/Pods-Present/Pods-Present.release.xcconfig"; sourceTree = "<group>"; };
 		AE27E50C27FB4C690084A50D /* FriendInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfo.swift; sourceTree = "<group>"; };
+		BA675476280DD639000C634B /* userDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDataBase.swift; sourceTree = "<group>"; };
 		E28C77CB27ECDEF200757463 /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-ExtraLight.ttf"; path = "Present/Nunito/static/Nunito-ExtraLight.ttf"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 				621D747D281A12D000006B99 /* LocalNotifs.swift */,
 				623AEBEB27CE9C2900247391 /* SettingsView.swift */,
 				623AEBED27CE9CA700247391 /* ImagePicker.swift */,
+				BA675476280DD639000C634B /* userDataBase.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				623AEBE027CD1AE500247391 /* FirebaseFunctions.swift in Sources */,
 				621D7478280F358300006B99 /* CreateUserInfo.swift in Sources */,
 				623AEBEA27CE96C000247391 /* HomeView.swift in Sources */,
+				BA675477280DD639000C634B /* userDataBase.swift in Sources */,
 				623AEBEE27CE9CA700247391 /* ImagePicker.swift in Sources */,
 				621D747E281A12D000006B99 /* LocalNotifs.swift in Sources */,
 				623AEBF027DA68E900247391 /* DataParsing.swift in Sources */,

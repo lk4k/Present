@@ -20,8 +20,8 @@ struct LogInView: View {
             
             VStack{
                 
-                Text("login")
-                    .font(Font.custom("Nunito-ExtraLight", size: 100))
+                Text("present")
+                    .font(Font.custom("Nunito-ExtraLight", size: 50))
                     .padding(70)
                 
                 

@@ -13,8 +13,10 @@ struct AddFriendView: View {
     
     
     var body: some View {
-        TextField("please type in your friend's email", text: $email).disableAutocorrection(true)
+        TextField("search by email", text: $email).disableAutocorrection(true)
+            .autocapitalization(.none)
             .padding()
+      
         Button("add my friend") {
             FirebaseFunctions.getFriendFromEmail(userInfo: userInfo, email: email, completion: {success in
                 if success {

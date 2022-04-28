@@ -41,7 +41,7 @@ struct UserDetail: View {
             
             //displaying variables
             HStack{
-            Text("Name: \(userInfo.name)").font(Font.custom("Nunito-ExtraLight", size: 30))
+            Text("name: \(userInfo.name)").font(Font.custom("Nunito-ExtraLight", size: 30))
                
                 
 //                Button("friend") {

@@ -15,7 +15,7 @@ struct FriendDetail: View {
     
     var body: some View {
         VStack{
-            Text("Friends").font(Font.custom("Nunito-ExtraLight", size: 40))
+            Text("check in on your friends!").font(Font.custom("Nunito-ExtraLight", size: 22.6))
             
             HStack{
                 Spacer()
@@ -59,7 +59,7 @@ struct FriendDetail: View {
         }
         
     }.sheet(isPresented: $showSheet, content: {
-        AddFriendView(email: "please type in your friend's email")
+        AddFriendView(email: "")
     })
     
 }
