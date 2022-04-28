@@ -58,11 +58,21 @@ struct CreateUserInfo: View {
                         .padding()
                     
                     Button("create account"){
-                        FirebaseFunctions.authenticate(email: userInfo.email, password: userInfo.password){ success in
-                            if success{
-                                userInfo.loggedIn = true
-                            }
-                        }
+                        FirebaseFunctions
+                            .createUser(userInfo, withEmail: userInfo.email, password: userInfo.password, completion: { error in
+                                
+                                if error == nil {
+                                    FirebaseFunctions.authenticate(email: userInfo.email, password: userInfo.password){ success in
+                                        if success{
+                                            
+                                            userInfo.loggedIn = true
+                                        }
+                                    }
+                                }
+                                else{
+                                    print(error?.localizedDescription)
+                                }
+                            })
                     }.frame(width: 150, height: 70)
                     .background(Color.Pink)
                     .foregroundColor(Color.black)
