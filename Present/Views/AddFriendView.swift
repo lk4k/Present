@@ -10,7 +10,7 @@ import SwiftUI
 struct AddFriendView: View {
     @EnvironmentObject var userInfo : UserInfo
     @State var email : String
-    
+    @Binding var friendShowSheet : Bool
     
     var body: some View {
         TextField("search by email", text: $email).disableAutocorrection(true)
@@ -29,8 +29,8 @@ struct AddFriendView: View {
                 else {
                     print("friend not found")
                 }
-                
             })
+        friendShowSheet = false
 //            FirebaseFunctions.mergeUser(userInfo.dataAsDictionary()) { _ in
 //
 //            }
@@ -41,6 +41,6 @@ struct AddFriendView: View {
 
 struct AddFriendView_Previews: PreviewProvider {
     static var previews: some View {
-        AddFriendView(email: "myemail@gmail.com")
+        AddFriendView(email: "myemail@gmail.com", friendShowSheet: Binding.constant(true))
     }
 }

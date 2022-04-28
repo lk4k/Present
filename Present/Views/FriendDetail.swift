@@ -10,7 +10,7 @@ import SwiftUI
 struct FriendDetail: View {
     @EnvironmentObject var userInfo : UserInfo
     //var defaultFriend: FriendInfo = FriendInfo(name: "Jamie", birthday: Date(), wishlist: "bread")
-    @State private var showSheet = false
+    @State var friendShowSheet = false
     @State private var wantNotifications = false
     
     var body: some View {
@@ -22,7 +22,7 @@ struct FriendDetail: View {
                 
                 Button("+"){
                     //add pull friend info function
-                    showSheet = true
+                    friendShowSheet = true
                 }.frame(width: 70, height: 70)
                     .background(Color.Pink)
                     .foregroundColor(Color.black)
@@ -58,7 +58,7 @@ struct FriendDetail: View {
             
         }
         
-    }.sheet(isPresented: $showSheet, content: {
+    }.sheet(isPresented: $friendShowSheet, content: {
         AddFriendView(email: "")
     })
     
