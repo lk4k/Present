@@ -37,19 +37,16 @@ struct FriendDetail: View {
                     
                     Text("wishlist: \(friend.wishlist)").font(Font.custom("Nunito-ExtraLight", size: 30))
                     
-                    Toggle("Notifications", isOn: $wantNotifications)
+                    Toggle("notifications", isOn: $wantNotifications)
                     if wantNotifications{
-                        Button("Request permission"){
+                        Button("request permission"){
                             NotificationManager.instance.requestAuthorization()
                         }
                         
-                        Button("Schedule notification"){
+                        Button("schedule notification"){
                             NotificationManager.instance.scheduleNotification(notificationHour : 9, notificationDay : friend.birthday.get(Calendar.Component.day), notificationMonth : friend.birthday.get(Calendar.Component.month), notificationMinute : 1)
                         }
                         
-                        Button("Schedule Notification"){
-                            NotificationManager.instance.scheduleNotification(notificationHour : 12, notificationDay : 27, notificationMonth : 04, notificationMinute : 57, friendName : friend.name)
-                        }
                     }
                     
                 }.background(Color.init(red: 249/255, green: 229/255, blue: 218/255))
