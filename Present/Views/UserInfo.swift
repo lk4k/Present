@@ -16,13 +16,11 @@ class UserInfo : ObservableObject, Identifiable{
     @Published var image: UIImage = UIImage(named: "user")!
     @Published var loggedIn : Bool
     @Published var friends : [FriendInfo] = [FriendInfo]()
-//        = [FriendInfo(email: "Claire@gmail.com", name: "Claire", birthday: Date("2004-12-28"), wishlist: "I want a 3D printer"),
-//        FriendInfo(email: "Ella@gmail.com", name: "Ella", birthday: Date("2005-07-08"), wishlist: "I want a 3D printer")]
     var uid = UUID()
     
     
     
-    init(name : String = "", email : String = "", password : String = "", loggedIn : Bool = false, birthday: Date = Date(), wishlist : String = ""){
+    init(name : String = "", email : String = "", password : String = "", loggedIn : Bool = false, birthday: Date = Date(), wishlist : String = "", friends : [FriendInfo] = [FriendInfo]()){
         
         //FirebaseFunctions.signOut()
         //self.loggedIn = false
@@ -33,6 +31,7 @@ class UserInfo : ObservableObject, Identifiable{
         self.password = password
         self.birthday = birthday
         self.wishlist = wishlist
+        self.friends = friends
         
         FirebaseFunctions.getUserInfo(self)
     }

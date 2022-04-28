@@ -32,19 +32,8 @@ struct FirebaseFunctions{
                 .getDocument { document, _ in
                     guard let document = document else {return}
                     //getting inforamtion from user's document
-                    //                    let imageURL = document.get("image") as? String ?? ""
                     userInfo.name = document.get("name") as? String ?? ""
                     
-                    //                    Storage
-                    //                        .storage()
-                    //                        .reference(forURL: imageURL)
-                    //                        .getData(maxSize: 1 * 1024 * 1024) { data, _ in
-                    //                            if let imageData = data {
-                    //                                userInfo.image = UIImage(data: imageData) ??
-                    //                                    UIImage(named: "user")!
-                    //                            }
-                    //
-                    //                        }
                 }
             
         }
@@ -93,42 +82,6 @@ struct FirebaseFunctions{
             .collection("users")
             .document(uid)
             .setData(["wishlist" : wishlist], merge: true)//true means if the document already exists it appends image url to data that already exists
-        
-    }
-    
-    static func uploadPicture(_ image: UIImage, completion: @escaping (Bool) -> ()){
-        //get the user's id. The image will be stored by this uid.
-        guard let uid = Auth.auth().currentUser?.uid else{
-            completion(false)
-            return
-        }
-        
-        //get a reference to the storage singleton.
-        //creates path to put image
-        let storage = Storage.storage().reference().child("users/\(uid)")
-        
-        
-        //convert the image to a form that can be stored in storage as data
-        //compresses data so you don't get charged a lot for storage in real app
-        guard let imageData = image.jpegData(compressionQuality: 0.50) else{
-            completion(false)
-            return
-        }
-        
-        //add to storage
-        //needs metadata to give info about where data was stored.
-        storage.putData(imageData, metadata: StorageMetadata()) { meta, error
-            in
-            if let _ = meta{
-                storage.downloadURL { url, error in
-                    guard let downloadURL = url else {return}
-                    Firestore.firestore()
-                        .collection("users")
-                        .document(uid)
-                        .setData(["image" : downloadURL.absoluteString], merge: true)//true means if the document already exists it appends image url to data that already exists
-                }
-            }
-        }
         
     }
     

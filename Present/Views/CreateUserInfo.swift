@@ -22,13 +22,6 @@ struct CreateUserInfo: View {
                 
                 Spacer()
                 
-                //                Image(systemName: "person.crop.circle")
-                //                    .resizable()
-                //                    .foregroundColor(Color.Pink)
-                //                    .frame(width: 200, height: 200)
-                //                    .aspectRatio(contentMode: .fill)
-                //                    .clipShape(Circle())
-                
                 Spacer()
                 VStack {
                     

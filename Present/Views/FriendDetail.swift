@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FriendDetail: View {
     @EnvironmentObject var userInfo : UserInfo
-    //var defaultFriend: FriendInfo = FriendInfo(name: "Jamie", birthday: Date(), wishlist: "bread")
+    
     @State var friendShowSheet = false
     @State private var wantNotifications = false
     
@@ -24,10 +24,10 @@ struct FriendDetail: View {
                     //add pull friend info function
                     friendShowSheet = true
                 }.frame(width: 70, height: 70)
-                    .background(Color.Pink)
-                    .foregroundColor(Color.black)
-                    .cornerRadius(80.0)
-                    .font(Font.custom("Nunito-ExtraLight", size: 20))
+                .background(Color.Pink)
+                .foregroundColor(Color.black)
+                .cornerRadius(80.0)
+                .font(Font.custom("Nunito-ExtraLight", size: 20))
                 
             }
             
@@ -45,10 +45,10 @@ struct FriendDetail: View {
                             NotificationManager.instance.requestAuthorization()
                         }.font(Font.custom("Nunito-ExtraLight", size: 20))
                         
-                         Button("Schedule notification"){
-                         NotificationManager.instance.scheduleNotification(notificationHour : 9, notificationDay : friend.birthday.get(Calendar.Component.day), notificationMonth : friend.birthday.get(Calendar.Component.month), notificationMinute : 1)
-                         }
-                    }.font(Font.custom("Nunito-ExtraLight", size: 20))
+                        Button("Schedule notification"){
+                            NotificationManager.instance.scheduleNotification(notificationHour : 9, notificationDay : friend.birthday.get(Calendar.Component.day), notificationMonth : friend.birthday.get(Calendar.Component.month), notificationMinute : 1)
+                        }.font(Font.custom("Nunito-ExtraLight", size: 20))
+                    }
                 }
                 
             }.background(Color.init(red: 249/255, green: 229/255, blue: 218/255))
@@ -56,13 +56,11 @@ struct FriendDetail: View {
         }
         
     }.sheet(isPresented: $friendShowSheet, content: {
-        AddFriendView(email: "", friendShowSheet: $friendShowSheet)
+    AddFriendView(email: "", friendShowSheet: $friendShowSheet)
     })
     
 }
 
-
-}
 
 struct FriendDetail_Previews: PreviewProvider {
     static var previews: some View {
