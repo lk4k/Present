@@ -10,9 +10,6 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var userInfo : UserInfo
     
-    @State private var showSheet = false
-    
-    
     var body: some View {
         ZStack {
             Rectangle()
@@ -89,13 +86,6 @@ struct SettingsView: View {
                 Spacer()
             }
         }
-        .sheet(isPresented: $showSheet, onDismiss: {//closure that calls firebase function and passes image
-            FirebaseFunctions.uploadPicture(userInfo.image){ result in
-                FirebaseFunctions.addUserName(userInfo.name)
-            }
-        }, content: {
-            ImagePicker(selectedImage: $userInfo.image)
-        })
     }
 }
 
