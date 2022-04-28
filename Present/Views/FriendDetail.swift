@@ -44,13 +44,10 @@ struct FriendDetail: View {
                         Button("Request permission"){
                             NotificationManager.instance.requestAuthorization()
                         }.font(Font.custom("Nunito-ExtraLight", size: 20))
-                        /*
+                        
                          Button("Schedule notification"){
                          NotificationManager.instance.scheduleNotification(notificationHour : 9, notificationDay : friend.birthday.get(Calendar.Component.day), notificationMonth : friend.birthday.get(Calendar.Component.month), notificationMinute : 1)
                          }
-                         */
-                        Button("Schedule Notification"){
-                            NotificationManager.instance.scheduleNotification(notificationHour : 12, notificationDay : 27, notificationMonth : 04, notificationMinute : 57, friendName : friend.name)
                     }.font(Font.custom("Nunito-ExtraLight", size: 20))
                 }
                 
